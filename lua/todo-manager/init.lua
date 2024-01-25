@@ -14,7 +14,11 @@ M.add_todo = function (todo)
         utils.create_todo_file("TODO.md")
     end
 
-    local todo = todo or vim.fn.input("TODO: ")
+    local TODO = todo or vim.fn.input("TODO: ")
+
+    if todo == '' then
+        TODO = vim.fn.input("TODO: ")
+    end
 
     local root = vim.fn.getcwd()
     local current_buffer = vim.fn.expand('%')
@@ -25,20 +29,17 @@ M.add_todo = function (todo)
     current_buffer = string.gsub(current_buffer, root .. '/', '')
     local relative = Path:new(current_buffer):make_relative(root)
 
-    utils.append_todo(relative, todo)
+    if TODO == nil or TODO == '' then
+        return
+    end
+
+    utils.append_todo(relative, TODO)
 end
 
 vim.api.nvim_create_user_command(
     'AddTodo',
     function (args)
-        local arguments = {}
-        for word in args.args:gmatch("%w+") do table.insert(arguments, word) end
-
-        if #arguments == 0 then
-            M.add_todo()
-        else
-            M.add_todo(arguments[1])
-        end
+        M.add_todo(args.args)
     end,
     { desc = "Add a todo", nargs = '?' }
 )
