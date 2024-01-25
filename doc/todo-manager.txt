@@ -1,0 +1,18 @@
+================================================================================
+                                                           *todo-manager.nvim*
+
+                                                                         *tag*
+
+todo-manager.nvim is a neovim plugin for managing todo tasks within a project
+
+                                                                     *AddTodo*
+
+Using the AddTodo command you can append a task to the TODO.md file that has
+been created
+
+>
+:AddTodo todo
+<
+
+
+vim:tw=78:ts=8:ft=help:norl:

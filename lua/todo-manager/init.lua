@@ -29,18 +29,18 @@ M.add_todo = function (todo)
 end
 
 vim.api.nvim_create_user_command(
-'AddTodo',
-function (args)
-    local arguments = {}
-    for word in args.args:gmatch("%w+") do table.insert(arguments, word) end
+    'AddTodo',
+    function (args)
+        local arguments = {}
+        for word in args.args:gmatch("%w+") do table.insert(arguments, word) end
 
-    if #arguments == 0 then
-        M.add_todo()
-    else
-        M.add_todo(arguments[1])
-    end
-end,
-{ desc = "Add a todo", nargs = '?' }
+        if #arguments == 0 then
+            M.add_todo()
+        else
+            M.add_todo(arguments[1])
+        end
+    end,
+    { desc = "Add a todo", nargs = '?' }
 )
 
 return M

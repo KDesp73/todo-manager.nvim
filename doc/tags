@@ -1,2 +1,3 @@
-myplugin.nvim	myplugin.txt	/*myplugin.nvim*
-tag	myplugin.txt	/*tag*
+AddTodo	todo-manager.txt	/*AddTodo*
+tag	todo-manager.txt	/*tag*
+todo-manager.nvim	todo-manager.txt	/*todo-manager.nvim*
