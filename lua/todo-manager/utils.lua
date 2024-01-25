@@ -59,17 +59,18 @@ M.append_todo = function(relative_file, todo)
     local file = io.open("TODO.md", "a")
     if file ~= nil then
         if file_line_index < 0 then
-            file:write("\n## " .. relative_file .. "\n\n")
+            file:write("\n## " .. relative_file .. "\n")
             file:write("- [ ] " .. todo .. "\n")
         else
-            table.insert(lines, file_line_index + 2, "- [ ] " .. todo .. "\n")
+            table.insert(lines, file_line_index, "- [ ] " .. todo .. "\n")
+
+            P(lines)
+
             M.writeLinesToFile("TODO.md", lines)
         end
 
         file:close()
     end
 end
-
-M.append_todo("/lua/todo-manager/utils.lua", "test")
 
 return M

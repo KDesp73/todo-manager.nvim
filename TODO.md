@@ -1,15 +1,13 @@
 # TODO
 
-## /lua/todo-manager/utils.lua
+## lua/todo-manager/init.lua
+
+- [ ] test1
+
+- [ ] help
 
 - [ ] test
 
-- [ ] todo41
+## TODO.md
 
-- [ ] todo32
-
-## /lua/todo-manager/init.lua
-
-- [ ] todo63
-
-- [ ] todo322
+- [ ] test1
