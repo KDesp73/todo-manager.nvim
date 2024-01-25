@@ -17,7 +17,7 @@ M.add_todo = function (todo)
     local todo = todo or vim.fn.input("TODO: ")
 
     local root = vim.fn.getcwd()
-    local current_buffer = vim.fn.expand('%')
+    local current_buffer = vim.fn.expand('%') or "Uncategorized"
     current_buffer = string.gsub(current_buffer, root .. '/', '')
     local relative = Path:new(current_buffer):make_relative(root)
 
