@@ -62,9 +62,7 @@ M.append_todo = function(relative_file, todo)
             file:write("\n## " .. relative_file .. "\n")
             file:write("- [ ] " .. todo)
         else
-            table.insert(lines, file_line_index, "- [ ] " .. todo)
-
-            P(lines)
+            table.insert(lines, file_line_index + 2, "- [ ] " .. todo)
 
             M.writeLinesToFile("TODO.md", lines)
         end

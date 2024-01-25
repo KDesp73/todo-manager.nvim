@@ -1,5 +1,6 @@
 # TODO
 
+- [ ] test
 ## lua/todo-manager/init.lua
 
 - [ ] test1
