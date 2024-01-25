@@ -1,6 +1,6 @@
 local M = {}
 
-M.create_todo__file = function (path)
+M.create_todo_file = function (path)
     local file = io.open(path, "w")
     if file ~= nil then
         file:write("# TODO\n")
@@ -72,5 +72,11 @@ M.append_todo = function(relative_file, todo)
         file:close()
     end
 end
+
+M.file_exists = function(name)
+   local f = io.open(name, "r")
+   return f ~= nil and io.close(f)
+end
+
 
 return M

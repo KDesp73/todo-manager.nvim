@@ -9,8 +9,12 @@ M.setup = function (opts)
 
 end
 
-M.add_todo = function ()
-    local todo = vim.fn.input("TODO: ")
+M.add_todo = function (todo)
+    if not utils.file_exists("TODO.md") then
+        utils.create_todo_file("TODO.md")
+    end 
+
+    local todo = todo or vim.fn.input("TODO: ")
 
     local root = vim.fn.getcwd()
     local current_buffer = vim.fn.expand('%')
@@ -20,9 +24,6 @@ M.add_todo = function ()
     utils.append_todo(relative, todo)
 end
 
-M.add_todo()
-M.add_todo()
-M.add_todo()
-
+M.add_todo("test")
 
 return M
