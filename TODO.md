@@ -4,10 +4,4 @@
 
 - [ ] test1
 
-- [ ] help
-
 - [ ] test
-
-## TODO.md
-
-- [ ] test1
