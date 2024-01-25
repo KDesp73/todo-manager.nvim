@@ -21,6 +21,8 @@ M.add_todo = function ()
 end
 
 M.add_todo()
+M.add_todo()
+M.add_todo()
 
 
 return M
